@@ -1,0 +1,23 @@
+name: Mi workflow ej 1
+
+on: push
+
+
+jobs:
+  tareas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar codigo
+        uses: actions/checkout@v4
+
+      - name: Instalar librerias
+        uses: pip install pytest
+
+      - name: Probar codigo
+        uses: pytest test.py
+        
+
+      
+      
+  
+
