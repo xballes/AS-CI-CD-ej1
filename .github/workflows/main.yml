@@ -1,25 +1,13 @@
-name: Mi workflow
+name: Prueba Python
 
 on: push
 
 jobs:
-  test:
+  test-python:
     runs-on: ubuntu-latest
     steps:
-      - name: Bajar codigo
-        uses: actions/checkout@v4
-
-      - name: Probar codigo
-        run: python3 test.py
-
-  build_push:
-    runs-on: ubuntu-latest
-    needs: [test]
-    steps:
-      - name: Bajar codigo
-        uses: actions/checkout@v4
-
-      
-      
-  
-
+      - uses: actions/checkout@v4
+      - name: Instalar dependencia
+        run: pip install pytest
+      - name: Ejecutar pruebas
+        run: pytest test.py
